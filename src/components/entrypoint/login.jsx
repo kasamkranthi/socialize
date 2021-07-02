@@ -32,7 +32,7 @@ function Login(props_sent) {
 
 
   const login_attempt = async credentials => {
-    const baseUrl = 'https://cors-everywhere.herokuapp.com/http://18.118.19.3:5000/login';
+    const baseUrl = 'http://18.118.19.3:5000/login';
     console.log("Client trying to login with input as follows: ", credentials);
     const response = await axios.post(baseUrl, credentials);
     console.log("Response to login attempt ", response);

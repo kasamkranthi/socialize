@@ -24,7 +24,7 @@ import axios from "axios";
   useEffect(()=>{
       async function firstTime(){
           
-          const res=await axios.post("https://cors-everywhere.herokuapp.com/http://18.118.19.3:5000/othersDetails",{email:props.email});
+          const res=await axios.post("http://18.118.19.3:5000/othersDetails",{email:props.email});
          
          
           setUser(res.data);
@@ -89,7 +89,7 @@ import axios from "axios";
       <Navbar.Brand>
       
       <div className="dropdown">
-      <img className="navbarImage" src={"https://cors-everywhere.herokuapp.com/"+User?.image} alt=""></img>
+      <img className="navbarImage" src={User?.image} alt=""></img>
        {User?.firstName}
       <div className="dropdown-content">
       <a href="/homepage/editprofile">Edit Profile</a>

@@ -33,7 +33,7 @@ function SignUp(props) {
     try{
       
 
-      const response =await axios.post("https://cors-everywhere.herokuapp.com/http://18.118.19.3:5000/users",newUser);
+      const response =await axios.post("http://18.118.19.3:5000/users",newUser);
       console.log("Axios response is",response);
       setSuccess(true);
 

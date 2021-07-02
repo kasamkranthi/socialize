@@ -87,8 +87,8 @@ export default function Messenger(props){
        const firstFunction = async () => {
         
         try{
-         const res = await axios.get("https://cors-everywhere.herokuapp.com/http://18.118.19.3:5000/conversations/" + props.email_id);
-         const res2=await axios.post("https://cors-everywhere.herokuapp.com/http://18.118.19.3:5000/othersDetails",{email:props.email_id})
+         const res = await axios.get("http://18.118.19.3:5000/conversations/" + props.email_id);
+         const res2=await axios.post("http://18.118.19.3:5000/othersDetails",{email:props.email_id})
          console.log("coversations",res.data);
          setconversations(res.data);
          setUser(res2.data);
@@ -105,7 +105,7 @@ export default function Messenger(props){
    useEffect(() => {
        const getMessages = async () => {
            try{
-           const res = await axios.get("https://cors-everywhere.herokuapp.com/http://18.118.19.3:5000/messages/" + currentChat._id);
+           const res = await axios.get("http://18.118.19.3:5000/messages/" + currentChat._id);
            setmessages(res.data);
            }
            catch(err){
@@ -132,7 +132,7 @@ export default function Messenger(props){
        })
        
        try{
-            const res = await axios.post("https://cors-everywhere.herokuapp.com/http://18.118.19.3:5000/messages", message);
+            const res = await axios.post("http://18.118.19.3:5000/messages", message);
             setmessages([...messages,res.data])
             setnewMessage("");
        }

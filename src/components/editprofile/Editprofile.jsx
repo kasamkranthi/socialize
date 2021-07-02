@@ -30,7 +30,7 @@ export default function EditProfile(props)
           
  useEffect(()=>{
    async function firstTime(){
-  const response= await axios.post("https://cors-everywhere.herokuapp.com/http://18.118.19.3:5000/getprofile", {
+  const response= await axios.post("http://18.118.19.3:5000/getprofile", {
    
       email: props.email_id
     
@@ -68,7 +68,7 @@ export default function EditProfile(props)
     
     data.append("name",fileName);
     try{
-       const Img= await axios.post("https://cors-everywhere.herokuapp.com/http://18.118.19.3:5000/file/upload",data);
+       const Img= await axios.post("http://18.118.19.3:5000/file/upload",data);
        form.image=Img.data;
       
       
@@ -82,7 +82,7 @@ export default function EditProfile(props)
    try{
 
 
-    const newDetails= await axios.post("https://cors-everywhere.herokuapp.com/http://18.118.19.3:5000/editprofile",form);
+    const newDetails= await axios.post("http://18.118.19.3:5000/editprofile",form);
     console.log("details updated:",newDetails);
     alert("successfully updated");
     window.location.reload();

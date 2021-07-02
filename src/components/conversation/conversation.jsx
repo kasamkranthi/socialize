@@ -14,7 +14,7 @@ export default function Conversation(props) {
          const getUser = async() => {
 
             try{
-             const res = await axios.post("https://cors-everywhere.herokuapp.com/http://18.118.19.3:5000/othersDetails", {email: friendId});
+             const res = await axios.post("http://18.118.19.3:5000/othersDetails", {email: friendId});
              console.log("friendData",res.data);
              setuser(res.data);
             }

@@ -11,7 +11,7 @@ export default function Share(props)
     useEffect(()=>{
         async function firstTime(){
             
-            const res=await axios.post("https://cors-everywhere.herokuapp.com/http://18.118.19.3:5000/othersDetails",{email:props.email});
+            const res=await axios.post("http://18.118.19.3:5000/othersDetails",{email:props.email});
            
            
             setUser(res.data);
@@ -36,7 +36,7 @@ export default function Share(props)
             data.append("file",file);
             data.append("name",fileName);
             try{
-               const Image= await axios.post("https://cors-everywhere.herokuapp.com/http://18.118.19.3:5000/file/upload",data);
+               const Image= await axios.post("http://18.118.19.3:5000/file/upload",data);
               
                newPost.img=Image.data;
             }catch(err){
@@ -45,7 +45,7 @@ export default function Share(props)
         }
 
         try{
-           await axios.post("https://cors-everywhere.herokuapp.com/http://18.118.19.3:5000/posts",newPost);
+           await axios.post("http://18.118.19.3:5000/posts",newPost);
            window.location.reload();
            console.log("posted succesfully");
 

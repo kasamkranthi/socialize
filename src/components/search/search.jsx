@@ -41,9 +41,9 @@ export default function Search(props)
 
        try{
            
-       const response= await axios.get("https://cors-everywhere.herokuapp.com/http://18.118.19.3:5000/getallusers");
+       const response= await axios.get("http://18.118.19.3:5000/getallusers");
         
-        const currentUser =  await axios.post("https://cors-everywhere.herokuapp.com/http://18.118.19.3:5000/getprofile", {
+        const currentUser =  await axios.post("http://18.118.19.3:5000/getprofile", {
      
             email: props.email_id,  
         })

@@ -19,7 +19,7 @@ export default function Post(props){
 
     useEffect(()=>{
         const fetchPosts=async()=>{
-            const res=await axios.post("https://cors-everywhere.herokuapp.com/http://18.118.19.3:5000/othersDetails",{email:props.post?.userId});
+            const res=await axios.post("http://18.118.19.3:5000/othersDetails",{email:props.post?.userId});
             //console.log("post console",res.data);
             
             setUser(res.data);
@@ -30,7 +30,7 @@ export default function Post(props){
 
     const likeHandler=async()=>{
         try{
-          const res= await axios.put("https://cors-everywhere.herokuapp.com/http://18.118.19.3:5000/posts/"+props.post?._id+"/like",{userId:props.email});
+          const res= await axios.put("http://18.118.19.3:5000/posts/"+props.post?._id+"/like",{userId:props.email});
           console.log(res.data);
         }catch(err){
             console.log(err);

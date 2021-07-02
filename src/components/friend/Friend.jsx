@@ -13,7 +13,7 @@ export default function Friend(props)
     useEffect(()=>{
         async function firstTime(){
             
-            const res=await axios.post("https://cors-everywhere.herokuapp.com/http://18.118.19.3:5000/othersDetails",{email:props.email});
+            const res=await axios.post("http://18.118.19.3:5000/othersDetails",{email:props.email});
            
            
             setUser(res.data);
@@ -28,14 +28,14 @@ export default function Friend(props)
     async function unfriend(email){
 
         try{
-         await axios.post("https://cors-everywhere.herokuapp.com/http://18.118.19.3:5000/removefriend", {
+         await axios.post("http://18.118.19.3:5000/removefriend", {
            sender: props.user,
            receiver: email
         })
         
 
         try{
-            await axios.post("https://cors-everywhere.herokuapp.com/http://18.118.19.3:5000/conversations/delete",{ sender: props.user,
+            await axios.post("http://18.118.19.3:5000/conversations/delete",{ sender: props.user,
         receiver: email})  
         
         }catch(err){
@@ -59,7 +59,7 @@ export default function Friend(props)
     async function remove(email){
 
         try{
-        const response = await axios.post("https://cors-everywhere.herokuapp.com/http://18.118.19.3:5000/deleterequest", {
+        const response = await axios.post("http://18.118.19.3:5000/deleterequest", {
            sender: props.user,
            receiver: email
 
@@ -83,7 +83,7 @@ export default function Friend(props)
   
         
      try{
-     const response = await axios.post("https://cors-everywhere.herokuapp.com/http://18.118.19.3:5000/confirmrequest", {
+     const response = await axios.post("http://18.118.19.3:5000/confirmrequest", {
         sender: props.user,
         receiver: email
      })
@@ -92,7 +92,7 @@ export default function Friend(props)
 
      if(response.status===200)
      {
-        const response2=await axios.post("https://cors-everywhere.herokuapp.com/http://18.118.19.3:5000/conversations",{sender:props.user,receiver:email})
+        const response2=await axios.post("http://18.118.19.3:5000/conversations",{sender:props.user,receiver:email})
     console.log(response2);
      }
     
@@ -114,7 +114,7 @@ export default function Friend(props)
   async function addfriend(email)
   {
     try{
-      const response = await axios.post("https://cors-everywhere.herokuapp.com/http://18.118.19.3:5000/sendrequest", {
+      const response = await axios.post("http://18.118.19.3:5000/sendrequest", {
          sender: props.user,
          receiver: email
       })
@@ -135,7 +135,7 @@ export default function Friend(props)
   async function unsend(email)
   {
     try{
-      const response = await axios.post("https://cors-everywhere.herokuapp.com/http://18.118.19.3:5000/deleterequest", {
+      const response = await axios.post("http://18.118.19.3:5000/deleterequest", {
          sender: email,
          receiver: props.user
       })
