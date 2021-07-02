@@ -1,0 +1,148 @@
+.edit{
+    display:flex;
+    height: calc(100vh - 62px);
+    background-color:#f0f2f5 ;
+}
+
+.leftBox{
+    flex:3;
+    
+}
+
+.wrapper{
+    flex:6;
+    padding:40px;
+
+}
+
+.rightBox{
+    flex:3;
+    
+}
+
+.editprofileform{
+    background-color: white;
+    border-radius: 10px;
+    padding:20px;
+    -webkit-box-shadow: 0px 1px 7px 0px rgba(0,0,0,0.37); 
+box-shadow: 0px 1px 7px 0px rgba(0,0,0,0.37);
+}
+
+.button{
+    text-align: right;
+}
+
+
+.editprofileHeading{
+    font-family: sans-serif;
+    
+    font-size: 3.75vh;
+}
+
+.defaultchange{
+     padding-left:1.5vh!important; 
+     font-size: 2vh!important;
+     
+}
+
+.defaultchange:focus{
+    outline: none ;
+}
+
+.editImage{
+    width:10vh;
+    height:10vh;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.editOption{
+    width:10vh;
+    height:10vh;
+    border-radius: 1.25vh;
+    display:flex;
+    align-items: center;
+    background-color:#e7f3ff;
+    justify-content: center;
+    margin-left: 2.5vh;
+    flex-direction: column;
+    cursor: pointer;
+   
+
+}
+
+.profilepic{
+    display:flex;
+}
+
+.editText{
+    font-size: 15px;
+    margin-top: auto;
+}
+
+.selectedImageContainer{
+    
+    position:relative;
+    margin-left: 20px;
+
+}
+
+.selectedImg{
+    width:10vh;
+    height:10vh;
+    border-radius:50% ;
+    
+    object-fit: cover;
+
+}
+
+.selectedCancelImg{
+  position:absolute;  
+  top:0;
+  margin-left: -10px;
+  cursor:pointer;
+  opacity:0.7;
+  font-size: 2vh!important;
+
+}
+
+.bioText{
+    resize: none!important;
+    overflow: auto;
+    font-size: 2vh!important;
+}
+
+@media screen and (max-width: 1000px) {
+    .leftBox{
+        display:none;
+    }
+    .rightBox{
+        display:none;
+    }
+    
+  }
+
+.editProfilesubHeading{
+    font-size: 2vh;
+    
+}
+
+.centering{
+    display:flex;
+    align-items: center;
+}
+
+.editProfileButton{
+    border:none;
+    padding:0.875vh 1.25vh;
+    border-radius: 0.625vh;
+    background-color: green;
+    font-weight: 500;
+    /* margin-right: 20px; */
+    cursor:pointer;
+    color:white;
+    margin-left: auto;
+    font-size:1.875vh;
+    margin-left: auto;
+}
+
